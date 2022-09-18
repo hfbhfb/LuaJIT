@@ -13,6 +13,8 @@
 # Copyright (C) 2005-2022 Mike Pall. See Copyright Notice in luajit.h
 ##############################################################################
 
+
+export MACOSX_DEPLOYMENT_TARGET=10.15
 MAJVER=  2
 MINVER=  1
 RELVER=  0
@@ -116,6 +118,7 @@ default all $(INSTALL_DEP):
 	@echo "==== Building LuaJIT $(VERSION) ===="
 	$(MAKE) -C src
 	@echo "==== Successfully built LuaJIT $(VERSION) ===="
+	./src/luajit helloworld.lua
 
 install: $(INSTALL_DEP)
 	@echo "==== Installing LuaJIT $(VERSION) to $(PREFIX) ===="
